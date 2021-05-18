@@ -1,0 +1,10 @@
+mkdir IR
+mkdir build
+
+~/compilers-practice/practice/llvm-project/build/bin/clang++ -O0 -emit-llvm -S -c DivisionByOneSample.cpp -o /dev/stdout | sed 's/ optnone//g' > IR/DivisionByOneBaseline.ll
+~/compilers-practice/practice/llvm-project/build/bin/clang++ IR/DivisionByOneBaseline.ll -o build/DivisionByOneBaseline
+./build/DivisionByOneBaseline
+
+~/compilers-practice/practice/llvm-project/build/bin/opt -load ~/compilers-practice/practice/llvm-project/build/lib/PeepholeOptimization_DivisionByOne.so -DivisionByOne < IR/DivisionByOneBaseline.ll -S -o IR/DivisionByOneOptimized.ll
+~/compilers-practice/practice/llvm-project/build/bin/clang++ IR/DivisionByOneOptimized.ll -o build/DivisionByOneOptimized
+./build/DivisionByOneOptimized
