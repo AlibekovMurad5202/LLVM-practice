@@ -1,0 +1,14 @@
+
+ Performance counter stats for './build/licm_div_20_optimized_without_LICM' (10 runs):
+
+          4 171,73 msec task-clock                #    0,998 CPUs utilized            ( +-  0,06% )
+               418      context-switches          #    0,100 K/sec                    ( +-  3,01% )
+                 0      cpu-migrations            #    0,000 K/sec                  
+             2 061      page-faults               #    0,494 K/sec                  
+    16 205 060 670      cycles                    #    3,884 GHz                      ( +-  0,02% )
+    10 419 256 240      instructions              #    0,64  insn per cycle           ( +-  0,01% )
+       103 534 714      branches                  #   24,818 M/sec                    ( +-  0,14% )
+            76 106      branch-misses             #    0,07% of all branches          ( +-  6,05% )
+
+           4,17898 +- 0,00432 seconds time elapsed  ( +-  0,10% )
+

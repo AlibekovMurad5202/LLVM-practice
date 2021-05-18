@@ -1,0 +1,14 @@
+
+ Performance counter stats for './build/licm_20_baseline' (10 runs):
+
+          1 274,03 msec task-clock                #    0,996 CPUs utilized            ( +-  0,28% )
+               150      context-switches          #    0,118 K/sec                    ( +-  9,36% )
+                 0      cpu-migrations            #    0,000 K/sec                  
+             2 061      page-faults               #    0,002 M/sec                  
+     4 938 351 442      cycles                    #    3,876 GHz                      ( +-  0,25% )
+     8 713 681 286      instructions              #    1,76  insn per cycle           ( +-  0,00% )
+       202 418 391      branches                  #  158,880 M/sec                    ( +-  0,02% )
+            45 647      branch-misses             #    0,02% of all branches          ( +-  3,83% )
+
+           1,27975 +- 0,00555 seconds time elapsed  ( +-  0,43% )
+
