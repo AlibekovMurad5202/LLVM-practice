@@ -18,5 +18,5 @@
 [4]: https://github.com/AlibekovMurad5202/LLVM-practice/blob/main/lab_01/PeepholeOptimization/IR/DivisionByOneBaseline.ll "Файл с llvm-IR до применения пасса"
 [5]: https://github.com/AlibekovMurad5202/LLVM-practice/blob/main/lab_01/PeepholeOptimization/IR/DivisionByOneOptimized.ll "Файл с llvm-IR после применения пасса"
 [6]: https://github.com/AlibekovMurad5202/LLVM-practice/blob/main/lab_01/PeepholeOptimization/DivisionByOneTest.log "Файл, в котором указаны командные строчки для получения файлов с llvm-IR"
-[7]: https://github.com/AlibekovMurad5202/LLVM-practice/blob/main/lab_01/PeepholeOptimization/Time%32[before].png "Время работы программы до применения пасса"
-[8]: https://github.com/AlibekovMurad5202/LLVM-practice/blob/main/lab_01/PeepholeOptimization/Time%32[after].png "Время работы программы после применения пасса"
+[7]: https://github.com/AlibekovMurad5202/LLVM-practice/blob/main/lab_01/PeepholeOptimization/Time%20%5Bbefore%5D.png "Время работы программы до применения пасса"
+[8]: https://github.com/AlibekovMurad5202/LLVM-practice/blob/main/lab_01/PeepholeOptimization/Time%20%5Bafter%5D.png "Время работы программы после применения пасса"
