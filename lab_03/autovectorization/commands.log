@@ -1,0 +1,34 @@
+mkdir tmp
+mkdir IR
+mkdir build
+mkdir results
+
+
+~/llvm-project/build/bin/clang++ -O3 -fno-vectorize -fno-unroll-loops -I./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" test.cpp -emit-llvm -c -o ./tmp/test1_O3__no_vec__no_unroll.bc
+~/llvm-project/build/bin/llvm-extract -func=_ZN8testFunc3runEv ./tmp/test1_O3__no_vec__no_unroll.bc -o ./tmp/run-fn.bc
+~/llvm-project/build/bin/llvm-dis ./tmp/run-fn.bc -o ./IR/test1_O3__no_vec__no_unroll.ll
+
+~/llvm-project/build/bin/clang++ -O3 -fno-vectorize -I./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" test.cpp -emit-llvm -c -o ./tmp/test1_O3__no_vec.bc
+~/llvm-project/build/bin/llvm-extract -func=_ZN8testFunc3runEv ./tmp/test1_O3__no_vec.bc -o ./tmp/run-fn.bc
+~/llvm-project/build/bin/llvm-dis ./tmp/run-fn.bc -o ./IR/test1_O3__no_vec.ll
+
+~/llvm-project/build/bin/clang++ -O3 -fno-unroll-loops -I./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" test.cpp -emit-llvm -c -o ./tmp/test1_O3__no_unroll.bc
+~/llvm-project/build/bin/llvm-extract -func=_ZN8testFunc3runEv ./tmp/test1_O3__no_unroll.bc -o ./tmp/run-fn.bc
+~/llvm-project/build/bin/llvm-dis ./tmp/run-fn.bc -o ./IR/test1_O3__no_unroll.ll
+
+~/llvm-project/build/bin/clang++ -O3 -I./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" test.cpp -emit-llvm -c -o ./tmp/test1_O3.bc
+~/llvm-project/build/bin/llvm-extract -func=_ZN8testFunc3runEv ./tmp/test1_O3.bc -o ./tmp/run-fn.bc
+~/llvm-project/build/bin/llvm-dis ./tmp/run-fn.bc -o ./IR/test1_O3.ll
+
+
+~/llvm-project/build/bin/clang++ -O3 -fno-vectorize -fno-unroll-loops -Rpass=loop-vectorize ./benchmark_app/main.cpp -I ./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" -o ./build/benchmark_app_O3__no_vec__no_unroll
+./build/benchmark_app_O3__no_vec__no_unroll > results/result____no_vec____no_unroll.txt
+
+~/llvm-project/build/bin/clang++ -O3 -fno-vectorize -Rpass=loop-vectorize ./benchmark_app/main.cpp -I ./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" -o ./build/benchmark_app_O3__no_vec
+./build/benchmark_app_O3__no_vec > results/result____no_vec__with_unroll.txt
+
+~/llvm-project/build/bin/clang++ -O3 -fno-unroll-loops -Rpass=loop-vectorize ./benchmark_app/main.cpp -I ./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" -o ./build/benchmark_app_O3__no_unroll
+./build/benchmark_app_O3__no_unroll > results/result__with_vec____no_unroll.txt
+
+~/llvm-project/build/bin/clang++ -O3 -Rpass=loop-vectorize ./benchmark_app/main.cpp -I ./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" -o ./build/benchmark_app_O3
+./build/benchmark_app_O3 > results/result__with_vec__with_unroll.txt

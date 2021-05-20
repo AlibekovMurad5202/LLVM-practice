@@ -1,5 +1,0 @@
-~/compilers-practice/lab3/llvm-project/build/bin/clang++ -O3 -fno-vectorize -fno-unroll-loops -I./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" test.cpp -emit-llvm -c -o test1.bc
-~/compilers-practice/lab3/llvm-project/build/bin/llvm-extract -func=_ZN8testFunc3runEv test1.bc -o run-fn.bc
-~/compilers-practice/lab3/llvm-project/build/bin/llvm-dis run-fn.bc -o run-fn.ll
-
-~/compilers-practice/lab3/llvm-project/build/bin/clang++ -O3 -fno-vectorize -fno-unroll-loops -Rpass=loop-vectorize ./benchmark_app/main.cpp -I ./loops/vectorizable/ -DINCLUDE_TEST=\"test1.hpp\" -o ./benchmark_app.exe
