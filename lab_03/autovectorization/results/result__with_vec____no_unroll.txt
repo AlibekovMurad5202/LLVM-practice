@@ -1,0 +1,13 @@
+Test-1 duration = 503.509 ms
+Test-2 duration = 480.131 ms
+Test-3 duration = 484.985 ms
+Test-4 duration = 485.429 ms
+Test-5 duration = 474.085 ms
+Test-6 duration = 473.953 ms
+Test-7 duration = 467.926 ms
+Test-8 duration = 482.062 ms
+Test-9 duration = 487.34 ms
+Test-10 duration = 501.5 ms
+Test-11 duration = 505.294 ms
+
+average duration = 486.019 ms
