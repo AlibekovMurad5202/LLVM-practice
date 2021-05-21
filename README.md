@@ -6,6 +6,7 @@ ___Применяемый стек технологий___: C++, [LLVM](https://
 ## Темы лабораторных работ:
 1. ___lab_01___ - Peephole-оптимизация
 2. ___lab_02___ - Оптимизация инвариантного кода цикла
+3. ___lab_03___ - [Векторизация](https://github.com/ArtemSkrebkov/autovectorization-practise.git)
 
 ---
 
