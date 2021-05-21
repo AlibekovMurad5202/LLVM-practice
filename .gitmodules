@@ -2,7 +2,7 @@
 	path = llvm-project
 	url = https://github.com/llvm/llvm-project.git
 	branch = release/11.x
-[submodule "lab_03/autovectorization-practise"]
-	path = lab_03/autovectorization-practise
+[submodule "lab_03/autovectorization-practice"]
+	path = lab_03/autovectorization-practice
 	url = https://github.com/ArtemSkrebkov/autovectorization-practise.git
 	branch = main
