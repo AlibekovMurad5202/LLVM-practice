@@ -6,3 +6,6 @@
 	path = lab_03/autovectorization-practise
 	url = https://github.com/ArtemSkrebkov/autovectorization-practise.git
 	branch = main
+[submodule "UNN-C-Style-Checker"]
+	path = UNN-C-Style-Checker
+	url = https://github.com/eshulankina/UNN-C-Style-Checker.git
